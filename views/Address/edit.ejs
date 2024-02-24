@@ -1,0 +1,36 @@
+<%- include('../includes/header.ejs') %>
+<%- include('../includes/sidebar.ejs') %> 
+  <!-- partial -->
+  <div class="main-panel">
+    <div class="content-wrapper">
+      <div class="page-header">
+        <h3 class="page-title"> Form elements </h3>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Forms</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Form elements</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="row">
+        <div class="col-12 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Address</h4>
+              <p class="card-description"> Edit Address </p>
+              <form class="forms-sample" action="/update-address" method="POST">
+                <%- include('form.ejs') %>
+
+                
+                <button type="submit" class="btn btn-gradient-primary me-2">Update Address</button>
+                <button class="btn btn-light">Cancel</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        
+        
+      </div>
+    </div>
+    <!-- content-wrapper ends -->
+<%- include('../includes/footer.ejs') %>

@@ -1,0 +1,34 @@
+<div class="form-group">
+    <label for="exampleInputTitle">Title</label>
+    <input type="text" class="form-control" name="ad_title" id="exampleInputTitle" placeholder="Enter Title" value="<% if(editing) { %><%= custAddress.ad_title %><% } %>">
+</div>
+<div class="form-group">
+    <label for="exampleInputLandmark">Landmark</label>
+    <input type="text" class="form-control" id="exampleInputLandmark" name="ad_landmark" placeholder="Enter Landmark" value="<% if(editing) { %><%= custAddress.ad_landmark %><% } %>">
+</div>
+<div class="form-group">
+    <label for="exampleInputCity">City</label>
+    <input type="text" class="form-control" id="exampleInputCity" name="ad_city" placeholder="Enter City" value="<% if(editing) { %><%= custAddress.ad_city %><% } %>">
+</div>
+<div class="form-group">
+    <label for="exampleSelectType">Type</label>
+    <select class="form-control" id="exampleSelectType" name="ad_type">
+        <option value="" selected disabled>Select Address Type</option>
+        <option value="Home">Home</option>
+        <option value="Office">Office</option>
+        <option value="Other">Other</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="exampleInputState">State</label>
+    <input type="text" class="form-control" id="exampleInputState" placeholder="Enter State" name="ad_state" value="<% if(editing) { %><%= custAddress.ad_state %><% } %>">
+</div>
+<div class="form-group">
+    <label for="exampleInputPincode">Pincode</label>
+    <input type="text" class="form-control" id="exampleInputPincode" placeholder="Enter Pincode" name="ad_pincode" value="<% if(editing) { %><%= custAddress.ad_pincode %><% } %>">
+</div>
+<input type="hidden" class="form-control" name="ad_id" id="ad_id" value="<% if(editing) { %><%= custAddress.ad_id %><% } %>">
+
+
+

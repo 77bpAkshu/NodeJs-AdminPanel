@@ -1,0 +1,116 @@
+<%- include('../includes/header.ejs') %>
+<%- include('../includes/sidebar.ejs') %> 
+  <!-- partial -->
+  <div class="main-panel">
+    <div class="content-wrapper">
+      <div class="page-header">
+        <h3 class="page-title"> Basic Tables </h3>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Tables</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Basic tables</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="row">
+        
+        <div class="col-lg-12 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Striped Table</h4>
+              <p class="card-description"> Add class <code>.table-striped</code>
+              </p>
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th> User </th>
+                    <th> Title </th>
+                    <th> Type </th>
+                    <th> Landmark </th>
+                    <th> City </th>
+                    <th> State </th>
+                    <th> Pincode </th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% if(custAddress.length > 0) {  %>
+                    <% for (let address of custAddress) { %>
+                    <tr>
+                      <td class="py-1">
+                        <img src="/images/faces-clipart/pic-1.png" alt="image" />
+                      </td>
+                      <td><a href="/address-deatils/<%= address.ad_id %>"><%= address.ad_title %></a></td>
+                      <td> <%= address.ad_type %> </td>
+
+                      <td>
+                        <%= address.ad_landmark %>
+                      </td>
+                      <td> <%= address.ad_city %> </td>
+                      <td> <%= address.ad_state %> </td>
+                      <td> <%= address.ad_pincode %> </td>
+
+                      <td> 
+                        <a href="/edit-address/<%= address.ad_id %>?edit=true" class="btn btn-primary btn-sm"><i class="mdi mdi-pencil-box-outline"></i></a>
+                        <a href="#" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="mdi mdi mdi-delete-forever"></i></a>
+                        
+                        <!-- <form action="/delete-customer" method="POST">
+                          <input type="hidden" class="form-control" name="custId" id="custId" value="<%= customer.id %>">
+                          <button type="submit" class="btn btn-danger btn-sm"><i class="mdi mdi mdi-delete-forever"></i></button>
+                        </form> -->
+
+                      </td>
+
+                    </tr>
+                    <% } %>
+                  <% } else { %>
+                    <tr>
+                      <td class="py-1">
+                        No Address Found!
+                      </td>
+                    </tr>
+                    <% } %>
+
+                
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <!-- content-wrapper ends -->
+    <!--Modal: modalConfirmDelete-->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Delete Address</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form action="/delete-address" method="POST">
+            <div class="modal-body">
+              <input type="hidden" id="adid" name="adid" value="2">
+            
+            
+              <div class="d-flex justify-content-center">
+                <i class="mdi mdi mdi-delete-forever animated rotateIn text-danger"></i>
+                <p class="heading text-danger">Are you sure?</p>
+              </div>
+  
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
+              <button type="submit" class="btn btn-primary">Yes</button>
+            </div>
+          </form>
+          
+        </div>
+      </div>
+    </div>
+    
+   <!--Modal: modalConfirmDelete-->
+<%- include('../includes/footer.ejs') %>
+
+         

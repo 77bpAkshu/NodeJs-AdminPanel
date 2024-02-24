@@ -1,0 +1,33 @@
+<div class="table-responsive">
+    <table class="table table-lg table-bordered personalinfo" aria-label>
+        <tbody>
+            <tr>
+                <th scope="row">Name</th>
+                <td><%= custs.c_name %></td>
+            </tr>
+            <tr>
+                <th scope="row">Mobile</th>
+                <td><%= custs.c_mobile %></td>
+            </tr>
+            <tr>
+                <th scope="row">Email</th>
+                <td><%= custs.c_email %></td>
+            </tr>
+            <tr>
+                <th scope="row">Address</th>
+                <td><%= custs.c_address %></td>
+            </tr>
+            <!-- <tr>
+                <th scope="row"><?= lang('App.address') ?></th>
+                <td><?= esc($customer->c_address) ?></td>
+            </tr> -->
+           
+           
+        </tbody>
+    </table>
+</div>
+<br>
+
+<a href="#">
+    <button type="button" class="btn btn-block btn-primary btn-sm btn-font-size">Edit</button>
+</a>

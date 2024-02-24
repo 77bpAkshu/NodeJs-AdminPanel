@@ -1,0 +1,100 @@
+<%- include('../includes/header.ejs') %>
+<%- include('../includes/sidebar.ejs') %> 
+  <!-- partial -->
+  <div class="main-panel">
+    <div class="content-wrapper">
+      <div class="page-header">
+        <h3 class="page-title"> Address </h3>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Address</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Address Details</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="row">
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="profile-username text-center"></h3>
+                    <div class="center" style="text-align: center;" >
+                        <img src="/images/faces/face1.jpg" width="200" height="200" alt="Profile" class="rounded-circle" alt="not found">
+                    </div>
+                    <div class="center" style="text-align: center;" >
+                        <p class="text-muted text-center">                
+                            <span class="badge bg-success">
+                            <!-- <?php echo ($customer->c_isActive=='1') ? 'Active' : 'Inactive'; ?> -->
+                            Active
+                            </span>  
+                        </p>
+                    </div>
+                    <div>
+                        <p class="text-muted text-center"><%= custAddress.ad_title %></p>
+                        <p class="text-muted text-center"></p>
+                    </div>
+        
+                    <ul class="list-group list-group-unbordered mb-3 main-list">
+                        <li class="list-group-item list-color">
+                            <b>Mobile:</b> <a class="float-right"><%= custAddress.ad_landmark %></a>
+                        </li>
+            
+                        <li class="list-group-item list-color">
+                            <b>Email</b> 
+                            <a class="float-right"><%= custAddress.ad_city %></a>
+                        </li>
+            
+
+        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <!-- Default Tabs -->
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                        <button class="nav-link active tablink" id="personal-tab" data-bs-toggle="tab" data-bs-target="#personal" type="button" role="tab" aria-controls="personal" aria-selected="true">Personal Info</button>
+                        </li>
+                    
+                    
+                        <li class="nav-item" role="presentation">
+                        <button class="nav-link tablink" id="address-tab" data-bs-toggle="tab" data-bs-target="#address" type="button" role="tab" aria-controls="address" aria-selected="false">Address</button>
+                        </li>
+                        <!-- 
+                        <li class="nav-item" role="presentation">
+                        <button class="nav-link tablink" id="document-tab" data-bs-toggle="tab" data-bs-target="#document" type="button" role="tab" aria-controls="document" aria-selected="false">Documents</button>
+                        </li>
+        
+                        <li class="nav-item" role="presentation">
+                        <button class="nav-link tablink" id="trips-tab" data-bs-toggle="tab" data-bs-target="#trips" type="button" role="tab" aria-controls="trips" aria-selected="false">Trips</button>
+                        </li> -->
+                        
+                    </ul>
+                    <div class="tab-content pt-4" id="myTabContent">
+                        <div class="tab-pane fade show active" id="personal" role="tabpanel" aria-labelledby="personal-tab">
+                            <%- include('personal-info.ejs') %>
+
+                        </div>
+        
+                        <div class="tab-pane fade" id="address" role="tabpanel" aria-labelledby="address-tab">
+                        </div>
+        
+                        <!--<div class="tab-pane fade" id="trips" role="tabpanel" aria-labelledby="trips-tab">
+                        </div>-->
+                    </div><!-- End Default Tabs -->
+                  
+                </div>
+              </div>
+        </div>
+        
+        
+        
+      </div>
+    </div>
+    <!-- content-wrapper ends -->
+<%- include('../includes/footer.ejs') %>
+
+         
